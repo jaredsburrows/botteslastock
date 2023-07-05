@@ -28,6 +28,7 @@ jobs:
 
       - name: Tweet Stock Price
         uses: Eomm/why-don-t-you-tweet@v1
+        if: github.repository == 'jaredsburrows/botteslastock' && github.ref == 'refs/heads/main'
         with:
           tweet-message: "$TLSA ${{ env.PRICE }}"
         env:
@@ -45,4 +46,3 @@ jobs:
 #          CONSUMER_API_SECRET_KEY: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
 #          ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
 #          ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-
