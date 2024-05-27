@@ -27,7 +27,7 @@ jobs:
           echo "PRICE=$PRICE" >> $GITHUB_ENV
 
       - name: Tweet Stock Price
-        uses: Eomm/why-don-t-you-tweet@v1
+        uses: Eomm/why-don-t-you-tweet@v2
         if: github.repository == 'jaredsburrows/botteslastock' && github.ref == 'refs/heads/main'
         with:
           tweet-message: "$TLSA ${{ env.PRICE }}"
